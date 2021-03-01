@@ -16,7 +16,8 @@ on:
     types: published
   push:
     branches:
-      - main
+      - master
+      - dev
 #  schedule:
 #    - cron: 0 8 * * 5
 #  watch:
