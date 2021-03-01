@@ -8,7 +8,7 @@ OLD_CWD="$(pwd)"
 
 [ "$(find build_dir/ -name .vermagic -exec cat {} \;)" = "$_vermagic" ]
 mkdir ~/imb
-tar -xf bin/targets/ramips/mt7621/openwrt-imagebuilder-${_version}-ramips-mt7621.Linux-x86_64.tar.xz -C ~/imb 
+tar -xJf bin/targets/*/*/openwrt-imagebuilder-* -C ~/imb 
 cd ~/imb/*
 make image PROFILE=xiaoyu_xy-c5
 mv bin/targets/ramips/mt7621/openwrt-${_version}-ramips-mt7621-xiaoyu_xy-c5-squashfs-sysupgrade.bin ../openwrt-${_version}-minimal-ramips-mt7621-xiaoyu_xy-c5-squashfs-sysupgrade.bin
