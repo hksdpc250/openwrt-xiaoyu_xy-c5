@@ -11,7 +11,7 @@ set -e -x
 # Description: OpenWrt DIY script part 2 (After Update feeds)
 #
 
-curl --retry 5 -L "https://downloads.openwrt.org/releases/$(printf "%s" "$REPO_BRANCH" | cut -c 2-)/targets/ipq40xx/generic/config.buildinfo" > .config
+curl --retry 5 -L "https://downloads.openwrt.org/releases/$(printf "%s" "$REPO_BRANCH" | cut -c 2-)/targets/ramips/mt7621/config.buildinfo" > .config
 sed -e '/^CONFIG_TARGET_DEVICE_/d' -e '/CONFIG_TARGET_ALL_PROFILES=y/d' -i .config
 cat "$GITHUB_WORKSPACE/additional_config.txt" >> .config
 
